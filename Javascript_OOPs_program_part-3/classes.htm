@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        document.write("OOPs in Javascript <br><br>");
+
+        class Employee {
+            //Initializing an object  
+            constructor(id, name) {
+                this.id = id;
+                this.name = name;
+            }
+
+            detail() {
+                document.write(this.id + "  " + this.name + "<br>");
+            }
+        }
+
+        //passing object to a variable   
+
+        var obj1 = new Employee(10, "QWTY");
+        var obj2 = new Employee(10, "Chase Black");
+        obj1.detail();
+        obj2.detail();
+
+
+
+        class cars {
+
+            constructor() {
+                this.brand = "BMW";
+                this.model = "XS";
+                this.year = "2022";
+            }
+
+        }
+
+        const car_obj = new cars();
+        document.write("Car brand is : " + car_obj.brand + "<br>"
+            + "Car model is : " + car_obj.model + "<br>"
+            + "Car year is : " + car_obj.year + "<br>");
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

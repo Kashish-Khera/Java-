@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        document.write("<b><br>Inheritance in JavaScript</b><br>");
+
+        document.write("<b><br>1.Single Class Inheritance</b><br>");
+
+        class Bike {
+            constructor() {
+                this.gear = 5;
+            }
+
+            getGears() {
+                return this.gear;
+            }
+        }
+
+
+        // child class
+
+        class Sazuki extends Bike {
+            constructor() {
+                super();
+                this.brand = "Yamaha"
+            }
+
+            getBrand() {
+                return this.brand;
+            }
+        }
+
+
+        const obj = new Sazuki();
+        document.write(obj.getBrand() + "   " + obj.getGears() + "<br>");
+
+
+// -----------------------------------------------------------------------------------
+
+document.write("<br><b>2. JavaScript Multilevel Inheritance</b><br>")
+
+// parent class
+class Bike_two
+{
+    constructor(gears_two)
+    {
+        this.gears_two = gears_two;
+    }
+}
+
+// child class
+class Honda extends Bike_two{
+    constructor(brand_two , gears_two)
+    {
+        super(gears_two);
+        this.brand_two = brand_two;
+    }
+}
+
+
+class shine extends Honda
+{ constructor(model, brand_two, gears_two)
+    {
+        super(brand_two, gears_two);
+        this.model = model;
+    }
+
+}
+
+const bike_two_obj = new shine("Shine", "Honda" ,5);
+document.write("The " + bike_two_obj.model + "  model of the " + bike_two_obj.brand_two + " brand has total " + bike_two_obj.gears_two + " gears. <br>")
+
+// -----------------------------------------------------------------------------------------------------------------------------------------------
+
+document.write("<br><b>3. JavaScript Hierarchical Inheritance</b><br>"); 
+
+class bike_three
+{
+    constructor(gear_three)
+    {
+        this.gear_three = gear_three;
+    }
+}
+
+// child class
+class Honda_two extends bike_three
+{
+    constructor(model_three, gear_three)
+    {
+        super(gear_three);
+        this.model_three = model_three;
+    }
+}
+class Suzuki_two extends bike_three
+{
+    constructor(model_three, color, gear_three)
+    {
+        super(gear_three);
+        this.model_three = model_three;
+        this.color = color;
+    }
+}
+
+
+const h_bike = new Honda_two("Shine" ,5);
+const s_bike = new Suzuki_two("ZXO", "Black" ,5);
+
+document.write(JSON.stringify(h_bike) + " <br>" + JSON.stringify(s_bike) + "<br>")
+
+// ----------------------------------------------------------------------------------------------------------------------------------------------
+
+document.write("<br><b>4. JavaScript Prototype Based Inheritance</b><br>"); 
+
+  function car(brand_name)
+  {
+    this.brand_name = brand_name;
+  }
+
+  car.prototype.getBrand = function()
+  {
+    return this.brand_name;
+  }
+
+
+//   another constructor funtion
+
+function vehicle(price)
+{
+    this.price = price;
+}
+
+const car_obj = new car("BMW");
+// Now car treats as a parent of Vehicle.  
+vehicle.prototype = car_obj;
+
+const vehicle_obj = new vehicle(100000);
+
+document.write(vehicle_obj.getBrand() + " : "  + vehicle_obj.price);
+
+
+
+
+    </script>
+
+</body>
+
+</html>

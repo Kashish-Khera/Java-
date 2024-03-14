@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        document.write("<br><b>WITHOUT- Destructuring Assignment</b><br>")
+
+        const arr = ["apple", "mango", "banana"];
+
+        const fruit1 = arr[0];
+        const fruit2 = arr[1];
+        const fruit3 = arr[2];
+
+        document.write("fruit1: " + fruit1 + "<br>" +
+            "fruit2: " + fruit2 + "<br>" +
+            "fruit3: " + fruit3 + "<br>");
+
+
+        // ----------------------------------------------------------------------------------------------------------------------
+
+        document.write("<br><b>WITH- Destructuring Assignment</b><br>")
+
+        const color = ["red", "orange", "blue", "greeen", "purple"];
+
+        const [obj1, obj2, obj3, obj4, obj5] = color;
+        document.write("color1: " + obj1 + "<br>" +
+            "color2: " + obj2 + "<br>" +
+            "color3: " + obj3 + "<br>" +
+            "color4: " + obj4 + "<br>" +
+            "color5: " + obj5 + "<br>");
+
+
+        //  --------------------------------------------------------------------------------------------------------------------------------
+
+        document.write("<br><b>Nested Array Destructuring</b><br>")
+
+        const arr2 = ["Apple", ["Banana", "Watermelon"]];
+
+        const [x, [y, z]] = arr2;
+        document.write(
+            x + "<br>" +
+            y + "<br>" +
+            z + "<br>");
+
+
+
+        // ---------------------------------------------------------------------------------------------------------------------------------------
+
+        document.write("<br><b>Object Destructuring Assignment</b><br>")
+
+        const fruit_two = {
+            name: "Apple",
+            price: 100
+        }
+
+
+        const { name, price } = fruit_two;
+
+        document.write("fruit name: " + name + " <br>" + "fruit price: " + price + "<br>")
+
+
+
+        //   ---------------------------------------------------------------------------------------------------------
+
+        document.write("<br><b>Nested Object Destructuring</b><br>")
+
+        const person = {
+            age: 26,
+            name: {
+                fname: "Madison",
+                lname: "Black"
+            }
+        }
+
+        // nested destructuring 
+        const { age, name: { fname, lname } } = person;
+        document.write("Person name: " + fname + " " + lname + "<br>" +
+            "Person age: " + age + "<br>")
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

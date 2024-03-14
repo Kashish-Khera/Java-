@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        //     document.write("Object Example 1  <br><br>")
+
+        //     Object_example_1 = {
+        //         id: 100,
+        //         name: "User One",
+        //         salary: "10000"
+        //     }
+
+
+        //     document.write(Object_example_1.id + "  " + Object_example_1.name + "  " + Object_example_1.salary  + "<br><br>")
+
+        //     document.write("Object Example 2  <br><br>")
+
+        //    var Object_example_2 = new Object();
+
+        //     Object_example_2.id = 200;
+        //     Object_example_2.name = "Madison";
+        //     Object_example_2.salary = "45000";
+
+        //     document.write(Object_example_2.id + "  " + Object_example_2.name + "  " + Object_example_2.salary + "<br><br>")
+
+
+
+        //     document.write("Object Example 3  <br><br>")
+
+
+        //     function emp_details(id, name , salary)
+        //     {
+        //         this.id = id ;
+        //         this.name =name ;
+        //         this.salary = salary;
+        //     }
+
+        //     Object_example_3 = new emp_details(300 , "Aaron Blackford" , 75000);
+
+        //     document.write(Object_example_3.id + "  " + Object_example_3.name + "  " + Object_example_3.salary + "<br><br>")
+
+
+        //     function student_details(rollno , name, fees)
+        //     {
+        //         this.rollno = rollno;
+        //         this.name =name ;
+        //          this.fees =fees;
+
+        //          this.change_fees =  change_fees;
+        //          function change_fees(fees_changed)
+        //          {
+        //             this.fees = fees_changed;
+        //          }
+
+
+        //     }
+
+        //     Object_example_4 = new student_details(400, "Lilly Blackford" , 30000 );
+        //     document.write(Object_example_4.rollno + "  " + Object_example_4.name + "  " + Object_example_4.fees + "<br><br>")
+        //     document.write("<br><b> CHANGING FEES </b><br>")
+        //     Object_example_4.change_fees(450000);
+        //     document.write(Object_example_4.rollno + "  " + Object_example_4.name + "  " + Object_example_4.fees + "<br><br>")
+
+
+
+        // class Car{
+
+        //     constructor(brand, model, price, year) {
+        // 		this.brand = brand;
+        // 		this.model = model;
+        // 		this.price = price;
+        // 		this.year = year;
+        // 	}
+
+
+        //     updated_price(newprice)
+        //     {
+        //         this.price = newprice;
+        //     }
+        // }
+
+        // const carObj = new Car("BMW", "X5", 9800000, 2019);
+        // document.write(
+        // "Car brand : " + carObj.brand + "<br>"
+        // + "Car model : " + carObj.model + "<br>"
+        // + "Car price : " + carObj.price + "<br>"
+        // + "Car year : " + carObj.year + "<br>" );
+
+        // document.write("<br><b>Changing the Price</b><br><br>")
+        // carObj.updated_price(8800000);
+        // document.write(
+        // "Car brand : " + carObj.brand + "<br>"
+        // + "Car model : " + carObj.model + "<br>"
+        // + "Car price : " + carObj.price + "<br>"
+        // + "Car year : " + carObj.year + "<br>" );
+
+
+        // const fruit = {
+        //     name: "Banana",
+        //     price: 20
+
+        // }
+
+        // document.write("The price of the " + fruit["name"] + 
+        // " is " + fruit["price"]);
+
+
+        // const num = {
+        //     10 :"ten",
+        //     20 : "twenty"
+        // }
+
+        // const x = 10; 
+        // document.write(num[x+10]);
+
+        // document.write("<br>Accessing the Nested Object Properties<br>");
+        // const cars_nested_obj = {
+        //     total_brand : 50,
+
+        //     audi :{
+        //         model : "q7" ,
+        //         price : "70000"
+        //     }, 
+        //     BMW :{
+        //         model : "S20D",
+        //         price : 900000
+        //     }
+
+        // }
+
+
+        // document.write("The model of Audi is " + cars_nested_obj.audi.model + 
+        // " and its price is " + cars_nested_obj.audi.price + "<br><br>");
+
+
+        // document.write("The model of BMW is " + cars_nested_obj["bmw"]["model"] + 
+        // " and its price is " + cars_nested_obj["bmw"]["price"] + "<br><br>");
+
+
+        document.write("<b><br>Adding or Updating the Object Properties </b><br><br>")
+
+        const fruitss = {
+            name: "Watermelon",
+            price: 150
+        }
+
+        document.write("The price of " + fruitss.name +
+            " is " + fruitss.price + "<br><br>")
+
+        // document.write("<b> Changing the Values </b>")
+        // fruitss.name = "Apple"; // Updating using the dot notation
+        // fruitss["price"] = 200; // Updating using the bracket notation
+        // fruitss.expiry = "5 days"; // Adding new property to the object.
+
+        // document.write("<br><br>The price of " + fruitss.name +
+        //     " is " + fruitss.price +
+        //     " and it expires in " + fruitss.expiry + "<br><br>");
+
+
+        document.write("<b><br> Deleting the Object Properties </b><br><br>")
+        delete fruitss.name;
+
+    console.log(fruitss)
+
+
+
+
+    </script>
+
+</body>
+
+</html>

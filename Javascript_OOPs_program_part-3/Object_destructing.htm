@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        document.write("<br><b>Object Destructuring</b><br>")
+
+        const watch =
+        {
+            brand: "Titan",
+            price: 6000,
+        }
+
+        const { brand, price } = watch;
+        document.write("The brand of the watch is " + brand + " and the price is " + price + "<br>");
+
+        // --------------------------------------------------------------------------------------------------------------
+
+        document.write("<br><b>Destructuring with less properties</b><br>");
+
+        const watch_two = {
+            brand_two: "Titan",
+            price_two: 6000,
+            color_two: "black",
+            dial_two: "Round"
+        }
+
+
+        const { brand_two, price_two } = watch_two;
+
+        document.write("The brand of the watch is " + brand + " and the price is " + price + "<br>");
+
+
+        // -------------------------------------------------------------------------------------------
+
+        document.write("<br><b>Object Destructuring and Renaming Variables</b><br>");
+
+        const watch_three = {
+            brand_three: "Titan",
+            price_three: 6000,
+            color_three: "black",
+            dial_three: "Round"
+        }
+
+        const { brand_three: bd, color_three: cr, dial_three: dl } = watch_three;
+
+        document.write(bd + " - " + cr + " - " + dl + "<br>");
+
+        // --------------------------------------------------------------------------------------------------------------
+
+        document.write("<br><b>Object Destructuring and Default Values</b><br>");
+
+        const animal = {
+            name: "Lion",
+            age: 10
+        }
+
+        const { name = "Tiger", color = "Yellow" } = animal;
+
+        document.write(name + " " + color + "<br>");
+
+        // ------------------------------------------------------------------------------------------------------------------
+
+        document.write("<br><b>Object Destructuring and Rest Operator</b><br>");
+
+
+        const nums = {
+            num1: 10,
+            num2: 20,
+            num3: 30,
+            num4: 40,
+            num5: 50,
+        }
+
+
+        const { num1, ...numbers } = nums;
+        document.write(num1 + "<br>" + JSON.stringify(numbers) + "<br>");
+
+
+        // -----------------------------------------------------------------------------------------------------------------------
+
+        document.write("<br><b>Object Destructuring and Function Parameter</b><br>");
+
+        function sum({ one, two, three, four }) {
+            return one + two + three + four;
+        }
+
+
+        const nums_two = {
+            num_two1: 5,
+            num_two2: 7,
+            num_two3: 10,
+            num_two4: 12,
+
+        }
+
+        let result = sum(nums_two);
+
+        document.write("The sum of numbers is: " + result);
+
+
+
+
+    </script>
+
+</body>
+
+</html>

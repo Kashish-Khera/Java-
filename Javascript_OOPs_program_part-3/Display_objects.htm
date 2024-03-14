@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        document.write("<b><br>Displaying Objects in JavaScript<br> <br></b>")
+
+        const fruit = {
+            name: "banana",
+            price: 100
+        }
+
+        document.write(fruit + "<br>")
+
+        //  ------------------------------------------------------------------------
+
+        document.write("<br><b>1. Accessing the Object Properties</b><br><br>")
+
+        const fruitName = fruit.name;
+        const fruitPrice = fruit["price"];
+
+        document.write("The price of the " + fruitName + " is: " + fruitPrice + "<br><br>")
+
+
+        // ----------------------------------------------------------------------------------------------
+
+        document.write("<br><b> 2.Using the JSON.stringify() Method</b><br><br>")
+
+
+        const fruit_data = JSON.stringify(fruit);
+        document.write(fruit_data +"<br>")
+
+        // -----------------------------------------------------------------------------------------------
+
+        document.write("<br><b> 3. Using the Object.enteries() Method</b><br><br>")
+
+        const numbers = {
+            num1 : 10,
+            num2 : 20,
+            num3 : 30,
+            num4 : 40,
+            num5 : 50
+        }
+
+
+        for(const [key , pair] of Object.entries(numbers))
+        {
+            document.write(key + ": " + pair + " <br>");
+        }
+
+        // -----------------------------------------------------------------------------------------------------
+      
+        document.write("<br><b> 4.Using the for...in Loop</b><br><br>")
+
+      
+        const languages = {
+            lang1 : "Hindi",
+            lang2 : "English",
+            lang3 : "Punjabi",
+            lang4 : "Spanish",
+            lang5 : "French",
+        }
+
+        for(const key in languages)
+        {
+            document.write( key + ": " + languages [key] + " <br>");
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        
+        
+        const wall={
+            color : "Black",
+            get get_wall_color()
+            {
+                return this.color;
+            }, 
+            
+            set set_wall_color(color)
+            {
+                return this.color = color;
+            }
+        }
+        document.write("<br><b> 1. JavaScript Getters </b><br><br>")
+
+        let color_of_wall = wall.get_wall_color;
+        document.write("Color of the wall is : " +  color_of_wall +"<br>");
+
+    // ---------------------------------------------------------------
+
+    document.write("<br><b> 2. JavaScript Setters </b><br><br>")
+
+        wall.set_wall_color = "Purple";
+        document.write("The color of the wall after update is : " + wall.color);
+
+    </script>
+</body>
+</html>

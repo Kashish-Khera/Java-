@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        document.write("<b><br>Static Method </b><br>")
+
+        class table {
+            static printSize() {
+                document.write("<br>Size of the table is 20 *20 <br>")
+                console.log("<br>Size of the table is 20 *20 <br>")
+            }
+
+            get_color() {
+                document.write("<br>The color of the table is: BLACK");
+                console.log(" The color of the table is: BLACK");
+            }
+
+            static method_two()
+            {
+                document.write("<br> 2nd Static method");
+
+            }
+
+            static method_two()
+            {
+                document.write("<br>This is  Static Methods with the Same Name <br>");
+
+            }
+        }
+
+        // static method execution
+        document.write("<br><b>Static Method execution</b><br")
+        table.printSize();
+        document.write("<br><b>Static Method with same name --returnthe last one</b><br>")
+        table.method_two();
+        const obj = new table();
+        obj.get_color();
+
+        // --------------------------------------------------------------------------------------
+
+        document.write("<br><b>Static Method Execution in the Constructor</b><br>")
+
+        class num{
+            constructor(a)
+            {
+                this.sqrt = this.constructor.getSqrt(a);
+            }
+
+
+            static getSqrt(a)
+            {
+                 document.write("Sqrt is "  + a* a);
+            }
+        }
+
+
+        const num_obj = new num(10);
+
+
+        // ------------------------------------------------------------------------------------------------
+
+        document.write("<br><b><br>Static Method Execution in Non-Static Method</b><br>")
+
+        class num_class
+        {
+            static getSqrt(a)
+            {
+                document.write("Sqrt is "  + a* a);
+
+            }
+
+            printSqrt(a)
+            {
+                document.write("Calling the printing function & sqrt is : "  + a*a );
+            }
+        }
+
+
+        const num_class_obj = new num_class();
+        num_class_obj.printSqrt(6);
+
+
+
+    </script>
+
+</body>
+
+</html>

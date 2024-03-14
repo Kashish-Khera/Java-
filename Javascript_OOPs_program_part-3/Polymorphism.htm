@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        document.write("<b><br>1.Method Overriding</b><br>")
+
+        class shape {
+            area(a, b) {
+                return "Area of each geometry is doff.<br>";
+            }
+        }
+
+
+        class Circle extends shape {
+            area(r) {
+                return "Area of circle is pie-r-square : " + (3.14 * r * r) + "<br>";
+            }
+        }
+
+
+        class Rectangle extends shape {
+            area(l, b) {
+                return "The area of Rectangle is " + (l * b) + "<br>";
+            }
+        }
+
+
+        const obj = new Circle();
+        document.write(obj.area(5));
+
+        const obj2 = new Rectangle();
+        document.write(obj2.area(5, 10) + "<br>");
+
+
+        // -----------------------------------------------------------------------------------------------------------------------
+
+        document.write("<b><br> Parent Class Method's Functionality Extension in Child Class</b><br>")
+
+        class Math {
+            mathOperations(a, b) {
+                document.write("Addition: " + (a + b) + "<br>" + "Subtraction: " + (a - b) + "<br>");
+            }
+        }
+
+
+        class AdvanceMath extends Math {
+            mathOperations(a, b) {
+                super.mathOperations(a, b);
+                document.write("Multiplication: " + (a * b) + "<br>" + "Division: " + (a / b) + "<br>")
+            }
+        }
+
+
+        const Math_obj = new AdvanceMath();
+        Math_obj.mathOperations(10, 5);// Calls method of AdvanceMath class
+
+        // ----------------------------------------------------------------------------------------------------------------------------------
+
+
+        document.write("<b><br>2.Method Overloading</b><br>")
+
+        function myFunction(arg1, arg2) {
+            if (arguments.length === 1) {
+                // Handle case where only one argument is passed
+                document.write("<br>Argument 1: " + arg1);
+            } else if (arguments.length === 2) {
+                // Handle case where two arguments are passed
+                document.write("<br>Argument 1: " + arg1 + ", Argument 2: " + arg2);
+            } else {
+                // Handle invalid number of arguments
+                document.write("<br>Invalid number of arguments");
+            }
+        }
+
+        // Call the function with different numbers of arguments
+        myFunction("Hello"); // Output: Argument 1: Hello
+        myFunction("Hello", "World"); // Output: Argument 1: Hello, Argument 2: World
+        myFunction("Hello", "World", "Extra"); // Output: Invalid number of arguments
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

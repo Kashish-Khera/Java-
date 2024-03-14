@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        document.write("<b><br>1.Achieving Encapsulation Using the Function Closures</b><br>")
+
+
+        function shoppingCart() {
+            const cartitem = [];
+            function add(item) {
+                cartitem.push(item);
+                document.write(item.name + " added to the cart.<br>")
+            }
+
+
+            function remove(itemName) {
+                const index = cartitem.findIndex(item => item.name === itemName)
+                if (index !== -1) {
+                    const removeItem = cartitem.splice(index, 1)[0];
+                    document.write(removeItem.name + " removed from the cart. <br> ")
+                }
+                else {
+                    document.write(itemName + " not found in the cart. <br> ")
+                }
+            }
+
+            return { add, remove };
+        }
+
+
+        const item1 = { name: "Car", price: "100000000" };
+        const item2 = { name: "Bike", price: "50000000" };
+
+        const cart = shoppingCart();
+        cart.add(item1);
+        cart.add(item2);
+
+        cart.remove("Bike");
+
+        // --------------------------------------------------------------------------------------------------
+
+        document.write("<b><br>2. Achieving Encapsulation Using ES6 Classes and Private Variables</b><br>")
+
+        class Car {
+
+            // Private field
+            #brand = "TATA";
+            #name = "Nexon";
+            #milage = 16;
+
+
+            getMilage() {
+                return this.#milage; // Accessing private field
+            }
+
+            setMilage(milage) {
+                // Modifying private field
+                this.#milage = milage;
+            }
+        }
+
+
+        let car_obj = new Car();
+        document.write(car_obj.getMilage() + "<br>");
+        car_obj.setMilage(20);
+        document.write("after updating , new milage is : " + car_obj.getMilage() + "<br>");
+        // carobj.#milage);  will throw an error.
+
+
+
+        // ---------------------------------------------------------------------------------------------------
+
+        document.write("<b><br>3. Achieving Encapsulation Using the Getters and Setters</b><br>")
+
+        class User {
+            #username = "Bob";
+            #pw = "12345678";
+            #isLoggedIn = false;
+
+            get username() {
+                return this.#username;
+            }
+
+
+            set username(user) {
+                this.#username = user;
+            }
+        }
+
+
+        const user = new User();
+        document.write(user.username + "<br>");
+        user.username = "QWERTY"
+        document.write("after updating " + user.username);
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

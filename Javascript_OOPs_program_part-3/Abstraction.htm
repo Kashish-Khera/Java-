@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+try {
+         // Object constructor
+         function fruit() {
+            this.name = "Fruit";
+            if (this.constructor === fruit) {// Preventing the instance of the object
+               throw new Error("You can't create the instance of the fruit.");
+            }
+         }
+         // Implementing method in the prototype
+         fruit.prototype.getName = function () {
+            return this.name;
+         }
+         const apple = new fruit();
+      } catch (error) {
+         document.write( error);
+      }
+
+
+    //   ---------------------------------------------------------------------
+
+    document.write("<br> Extending Abstrct classes");
+
+    function fruit_two() {
+         this.name_two = "Fruit_two";
+         if (this.constructor === fruit_two) { // Preventing the instance of the object
+            throw new Error("You can't create the instance of the fruit_two.");
+         }
+      }
+
+      // Implementing method in the prototype
+      fruit_two.prototype.getName_two = function () {
+         return this.name_two;
+      }
+
+      // Child class
+      function Apple_two(fruitname) {
+         this.name_two = fruitname;
+      }
+
+      // Extending the Apple_two class with the fruit class
+      Apple_two.prototype = Object.create(fruit_two.prototype);
+
+      const apple_two = new Apple_two("Apple");
+     document.wrote("name of the fruit is " + apple_two.getName_two());
+
+    </script>
+    
+</body>
+</html>

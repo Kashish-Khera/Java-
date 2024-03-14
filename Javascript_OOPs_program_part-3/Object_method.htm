@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // const company = {
+        //     companyName: "Tutorials Point",
+        //     companyWebsite: "www.tutorialspoint.com",
+
+        //     getInfo: function () {
+        //         return "Comapny Name: " + this.companyName + "<br>Website: " + this.companyWebsite;
+        //     },
+        // }
+
+        // document.write("<b><br>JavaScript - Object Methods</b><br>")
+        // let data = company.getInfo()
+
+        // document.write(data +"<br>");
+
+        // document.write("<b><br> Object Method Shorthand</b><br>")
+
+
+        // const employee = {
+        // 	name: "John Doe",
+        // 	age: 32,
+        // 	getInfo() {
+        // 		return "The employee name is " + this.name +
+        //         " and his age is " + this.age + " Years.";
+        // 	},
+        // }
+
+
+        // document.write(employee.getInfo());
+
+        const nums = {
+			getSum(a, b) {
+			return a + b;
+			}
+		}
+		nums.getMul = function (a, b) {
+			return a * b;
+		}
+    
+
+
+        document.write("Calling muliplication function : "+nums.getMul(2,3));
+
+    </script>
+
+</body>
+
+</html>

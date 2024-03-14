@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        document.write("<b><br>1. Creating an object using a constructor function</b><br>")
+
+        function tree() {
+            this.name = "palm";
+            this.age = 5;
+        }
+
+        const tree_obj = new tree();
+        document.write("name = " + tree_obj.name + ", age = " + tree_obj.age + "<br><br>");
+
+        // ----------------------------------------------------------------------------------------------------
+
+        document.write("<b><br>2. Constructor function with parameters</b><br>")
+
+        function bike(name, speed, gear) {
+            this.name = name;
+            this.speed = speed;
+            this.gear = gear;
+        }
+
+
+        const obj1 = new bike("Honda", 100, 4);
+        const obj2 = new bike("Yamaha", 200, 6);
+
+
+        document.write(JSON.stringify(obj1));
+        document.write(JSON.stringify(obj2));
+
+
+
+        // ----------------------------------------------------------------------------
+
+        document.write("<b><br><br>3.Adding a Property or Method to a Constructor</b><br>")
+
+        function house_address(no, street, city) {
+            this.house_no = no;
+            this.street = street;
+            this.city = city;
+
+
+            this.get_Full_address = function()
+            {
+                return this.houseNo + ", " + this.street + ", " + this.city;
+            }
+
+        }
+
+
+        const house_obj = new house_address(20, "Cooper Square", "New York");
+        const exact_address = house_obj.get_Full_address();
+
+        document.write("<b>House Details : </b> " + JSON.stringify(house_obj) + "<br>");
+        document.write("<b>Full address oif the house is : </b>" + exact_address);
+
+// ---------------------------------------------------------------------------------------------
+
+document.write("<b><br><br>4. JavaScript Object Prototype</b><br>")
+
+function bike_class(name , speed , gear)
+{
+    this.name = name ; 
+     this.speed = speed; 
+     this.gear = gear;
+}
+
+bike_class.prototype.bike_details = function()
+{
+    return this.name + ", " + this.speed + ", " + this.gear + "<br>";
+}
+
+
+
+const bike_class_obj1 = new bike_class("Honda", 100, 4);
+const bike_class_obj2 = new bike_class("Yamaha", 200, 6);
+
+const obj1_details = bike_class_obj1.bike_details();
+const obj2_details = bike_class_obj2.bike_details();
+
+document.write(obj1_details);
+document.write(obj2_details);
+
+
+    </script>
+
+</body>
+
+</html>
